@@ -15,7 +15,7 @@ public class Activity17 {
         
         WebElement selectElement = driver.findElement(By.cssSelector("select.h-80"));       
         Select multiSelect = new Select(selectElement);
-
+        multiSelect.deselectByIndex(0);
         
         multiSelect.selectByVisibleText("HTML");
        // System.out.println("first selected option:"+multiSelect.getAllSelectedOptions());
