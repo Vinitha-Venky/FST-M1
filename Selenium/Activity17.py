@@ -10,7 +10,7 @@ with webdriver.Firefox() as driver:
     selectElement = driver.find_element(By.CSS_SELECTOR, "select.h-80")
     multiSelect = Select(selectElement)
 
-
+     multiSelect.deselect_by_index(0)
     multiSelect.select_by_visible_text("HTML")
 
     for i in range(3, 6):
