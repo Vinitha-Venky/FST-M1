@@ -18,12 +18,12 @@ import static io.restassured.RestAssured.given;
 
 public class GitHub_RestAssured_Project {
 	String sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKnNiZJwNcmRaWWpaPo6Xe8b++0Wzdqk3Z7Z0Of9su/M";
-    String sshKeyId;
+    int sshKeyId;
 
     // Request specification
     RequestSpecification requestSpec = new RequestSpecBuilder().
             setBaseUri("https://api.github.com/user/keys").
-            addHeader("Authorization", "token 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").
+            addHeader("Authorization", "token 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").
             addHeader("Content-Type", "application/json").
             build();
     // Response Specification
@@ -43,7 +43,7 @@ public class GitHub_RestAssured_Project {
 
         // Generate response
         Response response = given().spec(requestSpec).body(reqBody).when().post();
-
+         response.then().log().all();
         // Extract the id
         sshKeyId = response.then().extract().path("id");
 
