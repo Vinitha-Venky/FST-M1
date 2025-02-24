@@ -1,8 +1,11 @@
 @activity4
-Feature: Data driven test without Example
+Feature: Login Test
+ 
 
-Scenario: Testing with Data from Scenario
-    Given User is on Login page
+  @Test
+  Scenario: Testing Login without Examples
+    Given User is on Login page1
     When User enters "admin" and "password"
-    Then Read the page title and confirmation message
-    And Close the Browser 
+    Then Read the page title and confirmation message1
+    And Close
+   
